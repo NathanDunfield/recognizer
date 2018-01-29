@@ -1,0 +1,54 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: moves</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<H1>Applicable Moves </H1>
+
+<P>
+Generally, there are the following moves that the program may 
+apply to a given spine:
+</P>
+<UL>
+<LI> cell reductions. A typical situation is when there is an edge adjacent 
+to exactly two cell germs, and the germs belong to distinct cells;
+
+<LI> cell collapses; 
+
+<LI> rough piercing. This move is applied when there is a boundary component 
+that is a 2-sphere. The effect of the move will be to transform this boundary component
+into a torus;
+
+<LI> delicate piercing. This is applied when there are at least two boundary 
+components, one of which is a sphere;
+
+<LI> a short curve reduction. This is relevant if the spine contains a 2-cell whose 
+closure (in the spine) is an embedded disc. This move yields a spine of the same 
+manifold, and, if the boundary of the cell passes through no more 
+than three vertices, this move allows to obtain a new spine with smaller 
+number of vertices. (Do note that the new spine may not be special. But if 
+the cell passes through exactly three vertices, it is). If it passes through 
+four vertices, then (in general) the new spine will have the same number of vertices, 
+but it is different and may be better for further simplification;
+
+<LI> surgeries: cutting a free strip and cutting along an annulus;
+
+<LI> counterpass simplification;
+
+<LI> replacement with a short component.
+
+<LI> cutting along normal torus.
+</UL>
+
+<P>A precise description of moves should be seen in the literature (see, for instance, 
+<a href="#mbook">[Matveev]</a>).
+</P>
+
+<P>
+<a name="mbook">[Matveev] S. Matveev, Algorithmic topology and classification of 3-manifolds, 
+Springer, 2003.</a>
+</P>
+
+</BODY></HTML>

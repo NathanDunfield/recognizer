@@ -1,0 +1,220 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<h1 align="center"> THREE-MANIFOLD RECOGNIZER </h1>
+
+<hr>
+
+<h1>INSTALLING THE RECOGNIZER </h1>
+
+<p>
+It is necessary only to copy <b>Recognizer.exe</b> to some directory. In order to use this 
+help more efficiently, it is also 
+desirable to create in the same directory a subdeirectory named "Help" and put the 
+present help-file in there. This will allow to use the Help directly from the 
+program (either by pressing F1 or referring the menu "Help").
+</p>
+
+<p>
+
+</p>
+
+<BR>&nbsp; 
+
+<h1> USING THE RECOGNIZER </h1>
+
+
+
+<BR>&nbsp; <FONT size=+2> What the Recognizer can do: </FONT>
+
+<UL>
+<LI> Recognize some types of manifolds (closed or with boundary). <a href="not_any.htm"> What, any manifold?</a> 
+<LI> From a given presentation of a manifold, give the following information:
+	<ul>
+	<li> first homology group;
+	<li> values of <a href="turaev_viro.htm">Turaev-Viro invariants</a> up to order 16;
+	<li> values of <a href="turaev_viro.htm">Epsilon-invariants</a> up to order 16;
+<li> value of Casson-Walker Invariant if surgery presentation of the manifold are used
+(now surgeries along knots and 2-component links only);
+	<li> its geometric type (after the complete recognition);
+	<li> hyperbolic volume, if the manifold is hyperbolic and closed.
+	</ul>
+<LI> From a given <a href="example-spine.htm">spine</a>, give the following information:
+	<ul>
+	<li> whether it is thickenable;
+	<li> the induced cell decomposition of the boundary of 
+		its regular neighborhood;
+		<a href="boundary_code.htm"> How does it look like?</a>
+	<li> the code of the singular graph; 
+		<a href="graph_code.htm"> How does it look like?</a>
+	<li> the list of all closed surfaces embedded into the spine;
+<li> the list of normal surfaces;
+	<li> the list of symmetries of the spine (notice that each symmetry is described
+	by its action on the boundary, so in particular for closed manifolds the only useful 
+	information provided will be the number of symmetries).
+	</ul>
+
+<LI> Perform individual elementary transformations of a given special spine 
+(and the corresponding manifold). <a href="moves.htm"> Which ones are available?</a> 
+
+<LI> Retrieve a presenation of the special spine with which the program is currently 
+working (this is possible even if you started with some other way of presenting the 
+manifold, because the program always starts by building some special spine of it). 
+This can be quite useful if you've just availed of the opportunity mentioned in the 
+previous item and want to observe the effect on the spine.
+</UL>
+
+
+
+
+<BR>&nbsp; <FONT size=+2> Accepted presentations of manifolds: </FONT>
+
+<UL>
+<LI> <A HREF="present_spine.htm "> By a special spine; </A>
+<LI> <A HREF="present_surgery.htm"> By surgery on a link; </A>
+<LI> <A HREF="present_heegaard.htm"> By a Heegaard diagram or an extended Heegaard diagram; </A>
+<LI> <A HREF="present_cryst.htm"> By a crystallization; </A>
+<LI> <A HREF="present_triangulation.htm"> By a genuine triangulation; </A>
+<li> By a singular triangulation;
+<li> By a gluing of polyhedra with triangulated boundary;
+<LI> By a dehydrated description 
+</UL>
+<UL>
+(please refer to the menu "Help|Examples" for information about this presentations).
+</UL>
+
+<BR>&nbsp; <FONT size=+2> Accepted presentations of spines: </FONT>
+
+<P>There are <A HREF="present_spine.htm ">two presentations</A> available.
+</P>
+
+
+<BR>&nbsp; <FONT size=+2> How to ask for what you want: </FONT>
+
+<P>
+The starting point is obviously to describe a manifold, by either 
+going to "File|New" in the main menu and entering a presentation of 
+one of available types, or by going to "File|Open" and opening a file with 
+such a presenation prepared in advance. Then you may proceed as 
+follows:
+<UL>
+<LI> to request one of the information items listed above, choose a 
+relevant item from "Information" menu;
+<LI> to recognize an individual manifold, go to "Recognizer|Recognize" and wait;
+<LI> to perform an elementary move on the spine, go to "Recognize|Dialog" and 
+choose one of the proposed options;
+<LI> to observe the recognition process one step at a time, go to "Recognizer|Make One Step". 
+Only one step is performed and you can observe the effect on the spine by going to the 
+information menu. At this point you can also "improve" the cellular decomposition of your spine 
+by going to "Recognizer|Make Cell Reductions";
+<LI> to retrieve a presentation of the special spine with which 
+the program is working, go to "Information|Show Boundary Curves" 
+(to get a presentation by boundary curves) or to "Information|Show Details" 
+(to get a presentation by gluing of details), see 
+<A HREF="present_spine.htm ">the explanation</A>. If you are in a dialog, 
+you'll need to close it first.
+<LI> To simplify a special spine go "Recognizer|Simplify Special Spine". It is possible for any of available presentations.
+</UL>
+</P>
+
+<P> Note that for performing the recognition some 
+<a href="options.htm">advanced options</a> are available. 
+</P>
+
+
+<BR>&nbsp; <FONT size=+2> What do the results mean? </FONT>
+
+<UL>
+
+<LI> <FONT size=+1>  Results of recognition: </FONT>
+<P> 
+The result of program's work is given by a <a href="molecule.htm">labelled molecule</a>. 
+Informally, that is a graph whose vertices are some manifolds with torus 
+boundary components and the edges correspond to gluings between these tori.
+Here is an <a href="example-mol.htm">example</a> which is obtained by running the Recognizer 
+(with default settings) on the following <a href="example-spine.htm">spine</a>. In simple cases 
+(such as when a manifold is geometric), you do not really need to understand 
+the labelled molecule.
+</P>
+
+<P>
+The labelled molecule is followed by the result of so-called assembling, 
+which is an attempt to produce the JSJ-decomposition of the manifold in 
+question. Assume first that the program has been able to produce a labelled 
+molecule without exceptional vertices. Then there are several posibilities:
+<UL>
+<LI> The manifold is Seifert. Then the program outputs the Seifert structure 
+in the usual format, by indicating the base surface and the parameters of 
+exceptional fibers, see <a href="example-seifert.htm">example</a>. The answer 
+also includes the geometric type of the manifold and its homology group;
+
+<LI> The manifold is hyperbolic. Here is an <a href="example-hyp.htm">example</a> 
+of running the Recognizer on a special <a href="example-hyp-spine.htm">spine</a> 
+of a hyperbolic manifold. Notice that the fact that the result is presented as a Dehn 
+filling does not guarantee that the manifold is hyperbolic; in order to check that, 
+one should attempt to calculate the volume by going to 
+"Information|Hyperbolic Volume".
+
+<LI> The manifold has a non-trivial JSJ-decomposition. Here is an 
+<a href="example-nontrivial-jsj.htm">example</a> 
+of running the Recognizer on a special <a href="example-jsj-spine.htm">spine</a> 
+of a manifold with a nontrivial JSJ-decomposition.
+</UL>
+</P>
+
+<P>
+It may happen that the labelled molecule contains some exceptional vertices. Then 
+the output of the program is a "quasi JSJ-decomposition", i.e. the program 
+describes a manifold as a result of gluing along tori some Seifert manifolds, some 
+hyperbolic pieces, and some unknown ones.
+</P>
+
+
+<LI> <FONT size=+1>  Results of spine transformations: </FONT>
+<P> The program outputs the spine in either of the two forms in which it 
+receives it, see <A HREF="present_spine.htm ">the explanation</A>. For instance, 
+one may ask the program to apply the inverse T-move to 
+<a href="spine-with-short-cpt.htm">this spine</a>, which contains an embedded 
+component of length 3, by going to "Recognizer|Dialog" and choosing the transformation
+"Short curve" (notice that there are generally several possible ways to 
+apply this move; the specific cell to which the chosen move applies is indicated 
+in the preceding line as "Crude piercing 1 = { 4, 2, 7 }"), 
+and view the result in the following 
+<a href="spine-after-Tmove.htm">form</a>.
+</P>
+
+</UL>
+
+
+<BR>&nbsp; <FONT size=+2> Go back and do something new: </FONT>
+
+<P>
+Initial presentation can always be retrieved by going to "Recognizer|Initial State". 
+If you had only viewed various information items, you can also return to the 
+initial presentation by going to "Information|Remove Information".
+</P>
+
+
+<BR>&nbsp; <FONT size=+2> Quick help </FONT>
+
+<P>
+For quick reference, the menu "Help|Examples" allows to see concrete examples 
+for the typical presentations of manifolds listed above.
+</P>
+
+
+<hr>
+<p><b>
+"Three-manifold Recognizer" 
+is being developed by the research group of S. Matveev in the department 
+of computer topology and algebra of Chelyabinsk State University.
+</b></p>
+<p>
+<a href="Contacts.htm"> Contacts </a>
+
+
+</BODY></HTML>

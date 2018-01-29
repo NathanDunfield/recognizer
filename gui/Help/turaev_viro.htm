@@ -1,0 +1,113 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: Turaev-Viro invariants</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<H1>Turaev-Viro and Epsilon invariants</H1>
+
+<P>
+The precise description of these invariants can be found in papers
+V. Turaev and O. Viro
+<a  href="#paperTV">[1]</a>, 
+S. Matveev,M. Ovchinnikov, M. Sokolov
+<a href="#paperEps">[2]</a>
+and in chapter 8 of S. Matveev's  book
+<a href="#MatveevBook">[3]</a>.
+
+<p>
+Epsilon-invariant is homologically trivial part of Turaev-viro invariant.
+Epsilon-invariant always computes more faster than Turaev-Viro invariant of the same order
+because only even colorings are involved.
+Epsilon-invariant of order 5 is indentic to &Epsilon-invariant
+described by Sergey Matveev in independent terms.
+See <a href="MatveevBook">[3]</a> chapter 8 for details.
+
+<p>
+The Recognizer can compute Turaev-Viro or Epsilon invariants
+order from 3 upto 16.
+The computation can be interrupted by clicking Stop button on toolbar or by pressing Ctrl+Break.
+But such stopping may take afew seconds.
+
+<P>
+To understand using notation, recall that Turaev-Viro invariants of order r are Laurent polynomials 
+in q, where q is a 2r-th root of unity (such that its square is a primitive root of unity of degree r). 
+The symbol s_k here stands for the sum
+<UL>
+S_k
+=&sigma;<sub>k</sub>
+=q<sup>k</sup>+q<sup>-k</sup>
+=e<sup>ik&pi;/r</sup>+e<sup>-ik&pi;/r</sup>
+</UL>
+</P>
+
+<p>
+If r=5 then &sigma;<sub>1</sub> =&frac12 (1 +&radic;2).
+It is the biggest root of equation   &epsilon;<sub>2</sub>=&epsilon;+1 -
+the value using in constructing of Matveev's &epsilon;-invariant.
+
+<p>
+Below you can see the result of calculation of the Turaev-Viro and the 
+epsilon invariants up to order 11 for the 3-manifold (S^2; (2,1),(3,1),(9,1),(1,-1)) 
+presented by <a href="example-spine.htm">this spine</a>.
+</P>
+
+<p>
+<PRE>
+Turaev-Viro Invariants :
+
+order	value
+ T_3	1
+ T_4	1
+ T_5	s_1 +1
+ T_6	3
+ T_7	s_2 +s_1 +4
+ T_8	2s_2 +3
+ T_9	7s_2 +13s_1 +18
+ T_10	3s_2 +2
+ T_11	5s_4 +5s_3 +12s_2 +8s_1 +19
+</PRE>
+</p>
+
+<p>
+<PRE>
+Homologically trivial part of Turaev-Viro Invariants:
+
+order	value
+ E_3	1
+ E_4	1
+ E_5	s_1 +1
+ E_6	3
+ E_7	s_2 +s_1 +4
+ E_8	2s_2 +3
+ E_9	7s_2 +13s_1 +18
+ E_10	3s_2 +2
+ E_11	5s_4 +5s_3 +12s_2 +8s_1 +19
+</PRE>
+</p>
+<BR>&nbsp;
+
+
+
+<P>
+<A name="paperTV">[1] V. Turaev - O. Viro, State sum invariants of
+3-manifolds and quantum 6j-symbols, Topology (4) 31 (1992), 865-902.</A>
+</P>
+
+
+<P>
+<A name="paperEps">[2] S. Matveev - M. Ovchinnikov - M. Sokolov}, On a
+simple invariant of Turaev-Viro type, J. Math. Sci. (New York)
+(2) 94 (1999), 1226-1229. </A>
+</P>
+
+<p>
+<a name="MatveevBook">[3]
+Matveev S. Algoritghmic topology and classification of
+3-manifolds (Algorithms and Computation in Mathematics). Springer
+Berlin Heidelberg, 2007.492 p.
+</a>
+</p>
+
+</BODY></HTML>

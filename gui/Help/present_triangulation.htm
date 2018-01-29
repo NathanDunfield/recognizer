@@ -1,0 +1,58 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: presentation by triangulation</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<H1>Presentations of 3-manifolds by genuine triangulations</H1>
+
+<P>
+Presentation by a genuine triangulation has the following form (this is a 
+genuine triangulation of the 3-sphere):
+</p>
+
+<PRE>
+facets:=[
+[1,2,3,4], [2,5,6,7], [2,3,4,7], [2,3,6,7],
+[1,2,3,6], [2,5,6,8], [1,2,6,8], [1,2,4,7],
+[2,5,7,8], [1,2,7,8], [1,3,4,7], [1,6,7,8],
+[1,3,6,7], [5,6,7,8]
+];
+</PRE>
+
+<P>
+The word "facets" is a command word. The numbers 1,2,3, etc. are the names of the 
+vertices of the triangulation. The list of 4-tuples describes the set of tetrahedra 
+of the triangulation, namely, the presence of a certain 4-tuple, say, [1,2,3,4], 
+means that the triangulation contains a (by definition unique) tetrahedron spanning 
+vertices 1, 2, 3, 4.
+</P>
+
+<P>
+Theprogram works by building the dual special spine to the triangulation and operating 
+with it. You can immediately view this spine by clicking Information|Show Boundary Curves.
+In this presentation of the spine, vertex v1 corresponds to the first tetrahedron 
+in the initial list, vertex v2 corresponds to the second one, and so on. 
+</P>
+
+<P>
+Recall also that each edge of the spine corresponds to gluing between two tetrahedra with a 
+common face. The name of any edge begins with the name of the tetrahedron corresponding to 
+the beginning of the edge and ends with the name of the tetrahedron corresponding to the end 
+of the edge, for example v12v13.
+</P>
+
+<P>
+<b>Remark. </b>
+</P>
+
+If a given description of genuine triangulation is incorrect (i.e. does not really determine 
+a genuine triangulation) then the default error message 'Spine is empty' appears (at the moment, 
+the program does not provide any hints allowing to locate the mistakes in presentations by 
+triangulations). 
+
+
+
+
+</body></html>

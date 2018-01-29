@@ -1,0 +1,101 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: presentation by spine</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<H1>Special spine presentations of 3-manifolds</H1>
+
+
+<H2><A name="curves">Presentation by boundary curves</A></H2>
+<P> Assume that you have a special spine P. In order to write down the presentation 
+accepted by the program, do the following:
+</P>
+     
+<OL>
+<LI> Number the edges of P and orient them;
+       
+<LI> For each 2-cell choose a basepoint and an orientation on its boundary curve. 
+Then write down a string of integers which shows in what order and in which 
+direction the boundary curve of the cell passes along the edges.
+</OL>
+
+<H3>Example.</H3>
+
+<P> Suppose that P is the spine shown in the figure below. 
+It can be constructed as follows. Take the graph with two vertices
+and four oriented edges a,b,c,d, where a is a loop with ends in one vertex, 
+d is a loop is a loop with ends in the other vertex, and b,c join the vertices.
+(The orientations of  b,c are such that they go out of the first vertex.)  Glue 
+three 2-cells along the curves abc^{-1}, aacddb^{-1}, bdc^{-1}.  (This CW complex
+is actually a special spine of the lens space L(5,1), you can look it up in
+the table of manifolds of complexity 2 given in <a href="moves.htm#mbook">[Matveev]</a>). 
+If we number edges a,b,c,d respectively with 1,2,3,4 and keep the orientations, then Steps 1 and 2 above   
+produce the following presentation:
+</P>
+
+<PRE>
+                          1 2 -3
+                          1 1 3 4 4 -2
+                          2 4 -3  
+</PRE>
+
+<IMG src="example-spine.jpg" width="500">
+
+<P>Remarks. </P>
+      
+<ol> 
+<LI> The minus sign shows that the boundary curve passes along the edge in the direction
+opposite to the orientation of the edge.
+<LI> Strings corresponding to different cells should be written in different lines.
+<LI> The integers in each string should be separated by one or more spaces.
+<li> There are some other styles to write a presentation of 2-cell boundary curve,
+for example any curve can have <a href="example-hyp-spine.htm">a number</a>
+or <a href="spine-after-Tmove.htm">a name</a>. These styles can be viewed in more 
+detail by going to "Help|Examples|Three styles of presenting special spines"
+</OL>
+
+
+
+<H2><A name="details">Presentation by gluing details</A></H2>
+
+<P>
+This is an alternative way of presenting special spines. It is more complicated but it gives 
+some idea of how the neighborhood of the singular graph looks like. For example, 
+the presentation by gluing details for the above spine is:
+</P>
+
+<PRE>
+v1 =
+	1 : 	v1	_2	 { 1 3 2}	% *** Edge 1 beginning
+ %	2 : 	v1	_1	 { 1 3 2}	% *** Edge 1 end
+	3 : 	v2	_1	 { 3 1 2}	% *** Edge 2 beginning
+	4 : 	v2	_2	 { 3 1 2}	% *** Edge 3 beginning
+v2 =
+ %	1 : 	v1	_3	 { 2 3 1}	% *** Edge 2 end
+ %	2 : 	v1	_4	 { 2 3 1}	% *** Edge 3 end
+	3 : 	v2	_4	 { 3 2 1}	% *** Edge 4 beginning
+ %	4 : 	v2	_3	 { 3 2 1}	% *** Edge 4 end
+</PRE>
+
+<P>
+Here v1 and v2 are vertices of the spine, the numbers 1,2,3,4 in the first column of each 
+vertex's description denote the four edge germs at each vertex, and the symbol v1 or v2 at the 
+next column shows where the corresponding edge goes if we leave out that germ. The triple 
+of form {1,3,2} describes the way the triods (comprised of germs of cells) are glued when the 
+germs of edges are glued. The symbol % stands for the beginning of an one-line commentary, hence
+whatever follows it in the line is not necessary for the program.
+</P>
+
+
+
+
+
+
+
+
+
+
+
+</BODY></HTML>

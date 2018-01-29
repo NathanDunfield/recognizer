@@ -1,0 +1,69 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: presentation by crystallizations</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<H1>Presentations of 3-manifolds by crystallizations</H1>
+
+<P>
+A presentation of a manifold by a crystallization has the following form (this 
+is the connected sum of two lens spaces):
+</P>
+
+<pre>
+fabcdelghijkomn*onjihgfedcbmlka*jimolkdnbafechg
+</pre>
+
+<P>
+The code of a crystallization with 2n vertices consists of three words separated by *.
+The words must consist of the first n letters of the Roman alphabet. It is only allowed 
+to use lower-case letters. Thus, the maximal number of vertices of any crystallization 
+is 52. All three words should be placed in the same line. 
+</P>
+
+<P>
+Please notice that if the text in the current window contains more than one crystallization 
+code then the program takes into account only the first one and ignores the rest.
+</P>
+
+<P>
+Details on presenting manifolds by crystallizations can be found in <a href="#cryst">[Crystal]</a>.
+The program works by first constructing a special spine of the given manifold and then 
+operating with it. This spine can be viewed at any moment by going to "Information|Show Boundary Curves".
+</P>
+
+
+<P>
+<B>Remark.</B>
+</P>
+
+<P>
+If the manifold determined by the crystallization is a connected sum, the program provides 
+only the list of connected non-oriented summands (this is actually true for the other types 
+of presentations as well). Therefore it is possible to get identical answers for 
+non-homeomorphic connected sums. For example, the following two crystallization codes
+</P>
+
+<PRE>
+	fabcdelghijkomn*onjihgfedcbmlka*jimolkdnbafechg
+and
+	fabcdelghijkomn*onjihgfedcbmlka*jinmlkdobafegch
+</PRE>
+
+<P>
+correspond to non-homeomorphic connected sums of two copies of the lens space L(3,1).
+However, the result of the recognition in both cases is the same:
+
+	A connected sum of 2 items :          H_1=Z_3+Z_3
+	Item 1  - L(3,1)
+	Item 2  - L(3,1)
+</P>
+
+
+<a name="cryst">[Crystal] M. Ferri, C. Gagliardi, L. Grasselli, A graph-theoretical 
+representation of PL-manifolds: A survey on crystallizations, Aequat. Math. 31  
+(1986), 121–141.</a>
+
+</BODY></HTML>

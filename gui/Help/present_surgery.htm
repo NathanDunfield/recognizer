@@ -1,0 +1,137 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: presentation by surgery</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<H1> Surgery presentation of a manifold </H1> 
+
+<P> Assume that you have a connected planar diagramm of a framed link L 
+with n crossings. In order to write down the presentation accepted 
+by the program, do the following (steps 3 and 4 are optional):
+</P>
+
+<OL> 
+<LI> Number the crossings of L by successive natural numbers 
+1,2,3,...,n in an arbitrary manner.
+
+<LI> Choose an orientation and an initial point for each component of L. 
+
+<LI> Assign orientation signs +1 or -1 to each crossing  using 
+the convention shown in the figure below:
+we take +1 if the overcrossing strand passes the undercrossing 
+one from the left to the right, and -1 otherwise.
+   
+<PRE>
+          ^                            ^
+          |                            |  
+          |                            |
+     ---------->   +1             <----------   -1  
+          |                            |
+          |                            |
+                           
+</PRE>
+
+<LI> Write down a string of n integers +1 or -1: i-th number of 
+the string is the orientation sign of i-th crossing.
+
+<LI> Order the components of L in some arbitrary manner.
+
+<LI> Start “walking” along the first component of L from the 
+initial point, taking note of the numbers  of the crossings
+you’ve gone through. If in a given crossing labeled with a number k you are on 
+the “over” strand, write  down k or +k. If you are on 
+the “under” strand, write down -k. 
+
+<LI> Do the same for all other components of L (if any). The resulting
+list of signed integers (in the case of a knot) or list of lists 
+of signed integers (in the case of a link) is called 
+the Gauss Code of L.
+</OL>
+
+<P>
+<ul>
+<li>The description of a presentation by a surgery starts with the command <b>link</b>
+and ends with the command <b>end</b>.
+
+<li>After the command <b>link</b>, you may put optional command 
+<b>signs</b> followed by the string of integers produced at Step 4 above.
+
+<li>Then for  each component you put one or two commands: <b>code</b> followed by the code of that component  
+that was obtained at Steps 6-7, and optional <b>framing</b> followed by the numerator and 
+the denominator (separated by the blank space only, or by the sign "/") of the corresponding component. 
+If the command <b>framing</b> is omitted corresponding component is not framed.
+See the examples below.
+</ul>
+</P>
+
+    
+<H2>Examples.</H2>
+
+<p>
+<b>1. Figure-eight knot without framing</b>
+<ul>
+<PRE>
+link
+code 1 -2 3 -4 2 -1 4 -3
+end
+</PRE>
+</ul>
+</p>
+
+<p>
+<b>2. Trefoil knot with framing -3/2</b>
+<ul>
+<PRE>
+ link
+ signs 1 1 1
+ code 1 -2 3 -1 2 -3
+ framing -3 2
+ end
+</PRE>
+</ul>
+</p>
+
+<p>
+<b>3. Hopf link with framings -2 and 5/7</b>
+<ul>
+<PRE>
+ link
+ signs -1 -1
+ code -1 2
+ framing -2
+ code -2 1
+ framing 5 7
+ end
+</PRE>
+</ul>
+</p>
+
+<p>
+<b>4. Whitehad link with the secondd component framed</b>
+<ul>
+<pre>
+link
+code -1 2 -3 4
+code 1 -5 3 -4 5 -2
+framing -3/2
+end
+</pre>
+</ul>
+</p>
+
+
+<P>Remarks.
+<ul>
+<li> Framings n  and  n 1 are equivalent.</P>
+<li> If steps 3 and 4 above are omitted but the given code of a knot or link is valid, then 
+the program calculates some set of signs automaticaly. But this set is only one of many possible ones.
+Hence the link that the Recognizer deals with may be different from the one you mean. So it is 
+recommended to give signs of crossings explicitly and use the command <b>signs</b>. On the other hand, 
+if you did not do so, you cal always learn which signs were used by the program by going to the menu
+"Information|Short".
+</ul>
+
+
+</BODY></HTML>

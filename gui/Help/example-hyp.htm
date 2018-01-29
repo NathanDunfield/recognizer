@@ -1,0 +1,133 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: examples of Dehn fillings</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<H1>Result of Recognition of a Manifold Represented as a Dehn Filling</H1>
+
+<PRE>
+Manifold is
+Dehn filling Q_2(1,-4)          H_1=0
+</PRE>
+
+<P>
+The answer describes the manifold as a Dehn filling of one of the eleven 
+manifolds of complexity at most 3, with boundary a torus and hyperbolic interior.
+These manifolds are named by Q_1, Q_2, ..., Q_11. These are complement spaces of 
+knots in 3-manifolds of genus 0 or 1. For instance, Q_2 is the complement of the 
+figure-eight knot. In the picture below you can see the 14 special spines of 
+these manifolds used by the program. The first eleven spines P_1 to P_11 represent 
+the manifolds Q_1 to Q_11 respectively, P_12 is again a spine of manifold Q_6, 
+P_13 is a spine of manifold Q_1, and P_14 is a spine of Q_2.
+</P>
+
+<IMG src="hyp_spines_1.jpg" height="700">
+
+<IMG src="hyp_spines_2.jpg" height="700">
+
+<p>
+The program is also able recognize Dehn fillings of hyperbolic manifolds with at most 4 cusps 
+and complexity up to 7. For this purpose we use the list of hyperbolic manifolds 
+of complexity 4 to 7 having one or two cusps. (In fact, a few manifolds of complexity 
+8-10 are also used, so sometimes the answer can be obtained for hyperbolic manifolds 
+complexity greater than 7.) This list was published by J. Weeks.
+Please note that our notation for these manifolds is different from the original one.
+</p>
+
+<P>
+Hyperbolic manifolds with 1 cusp are denoted as Qk_n, where k is the complexity and n is 
+a number in order. Hyperbolic manifolds with more than one cusp are denoted by Qk^l_n,
+where K is the complexity, l is the number of cusps, n is the number in order. The 
+order starts from 1 for each number of cusps, for instance, we have Q6_1, Q6^2_1, Q6^3_1.
+</p>
+
+<p>
+The total number of manifolds obtained from the table of J. Weeks is:
+</p>
+
+<pre>
+With 1 cusp:
+complexity 2 -- 2,
+complexity 3 -- 9,
+complexity 4 -- 52,
+complexity 5 -- 223,
+complexity 6 -- 913,
+complexity 7 -- 3388.
+
+With 2 cusps:
+
+complexity 4 -- 4,
+complexity 5 -- 11,
+complexity 6 -- 48,
+complexity 7 -- 162.
+
+With 3 cusps:
+
+complexity 6 -- 1,
+complexity 7 -- 2.
+</pre>
+
+<p>
+If the program found a presentation of a given manifold using some of these known hyperbolic 
+manifolds with two cusps, the answer would be something like this:
+<ul>
+<li> Q5^2_11 1: Dehn filling (1,2), 2: Free (1 2) (0 1)
+<li> Q6^2_24 1: Free (0 1) (1 0), 2: Dehn filling (3,2)
+<li> Q7^2_111 1: Dehn filling (2,1), 2: Dehn filling (3,1)
+</ul>
+The notation "i: Free (a b) (c d)" means that the i-th boundary torus is free and the canonical coordinate 
+system on it and the coordinate system on the boundary of the recognized manifold are related via 
+the matrix (a b) (c d), where (a b) and (c d) are rows. Thus, the manifolds in the first and the 
+second lines have boundaries that consist of a single torus, while the manifold in the third line is 
+closed.
+</p>
+
+<p>
+If the result of the recognition is a hyperbolic manifold with two or more cusps and it is a manifold
+from the table then the answer will have a more complicated form. Namely, the program tries to 
+establish a correspondence between the cusps of the initial manifold and those of atoms taken 
+from the table. For example, let us consider the following manifold:
+</p>
+
+<pre>
+link
+signs 1 1 1 1 1 1 1
+code 4 -3 2 -1
+framing 1
+code 5 -6 3 -4
+code 1 -2 6 -5
+end
+</pre>
+
+<p>
+If we first perform (within the dialog) a crude piercing and then close dialog and run recognition,
+we soon obtained the following presentations:
+</p>
+
+<pre>
+         +3D^3          H_1=Z+Z
+ 1
+ Edge 1 { Solid torus 3 (1,1) , Exceptional vertex 4 L6^3_1 } (1 0) (0 1)
+ Virtual edge2 { Virtual vertex 1  , Exceptional vertex 4 L6^3_1 } (1 0) (0 1)
+ Virtual edge3 { Virtual vertex 2  , Exceptional vertex 4 L6^3_1 } (1 0) (0 1)
+
+ 2
+ Edge 1 { Solid torus 3 (-1,2) , Exceptional vertex 4 Q6^3_1 } (1 0) (0 1)
+ Virtual edge2 { Virtual vertex 1  , Exceptional vertex 4 Q6^3_1 } (0 1) (1 2)
+ Virtual edge3 { Virtual vertex 2  , Exceptional vertex 4 Q6^3_1 } (-1 -2) (0 1)
+
+ 3
+ Virtual edge1 { Virtual vertex 1  , Exceptional vertex 4 Q6^3_1 } (1 0) (-1 -1)
+ Virtual edge2 { Virtual vertex 2  , Exceptional vertex 4 Q6^3_1 } (0 1) (1 2)
+ Edge 3 { Solid torus 3 (-3,1) , Exceptional vertex 4 Q6^3_1 } (1 0) (0 1) 
+</pre>
+
+<p>
+Here the i-th virtual vertex corresponds to the i-th toral component of the boundary of the manifold
+(the numbering of boundary components can be viewed via "Information|Boundary"), and the j-th edge 
+corresponds to the j-th cusp.
+</p>
+
+</BODY></HTML>

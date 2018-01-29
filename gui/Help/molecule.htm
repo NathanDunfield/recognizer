@@ -1,0 +1,113 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: what is a labelled molecule?</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<H1>Labelled Molecules</H1>
+
+<P>
+A labelled molecule is a graph G some of whose vertices and
+edges are equipped with labels of different kind. Labeled 
+vertices are called atoms. There are five types of vertices: 
+
+<UL>
+<LI> Solid torus vertices. They have  valence 1 and are shown
+as fat black dots.
+
+<LI> Mobius vertices. They are of valence 2 and labeled by
+white circles.
+
+<LI> Triple vertices. They have valence 3 and no label.
+
+<LI> Exceptional vertices. Each such vertex stands for
+an oriented 3-manifold X, whose boundary consists of spheres and
+tori. We assume that there is a fixed  bijection between the
+boundary tori of X and the edges of G having an endpoint at the 
+vertex (if an edge has both endpoints at the vertex, then it 
+corresponds to two boundary tori). The boundary tori which are 
+joined by edges with vertices of types 1--4 are equipped with 
+coordinate systems.
+
+<LI> Virtual vertices. They are of valence 1 and are not labeled.
+</UL> 
+
+<P>
+These labels have the following meaning. Vertices of the first three
+types correspond to standard 3-manifolds and are considered as
+known atoms. Each Mobius atom is an oriented S^1-bundle
+over a once punctured Mobius strip. The boundary tori are equipped 
+with coordinate systems so that the meridians are
+the boundary components of a section of the bundle while the
+longitudes are fibers. The meridians and longitudes are oriented
+so that the intersection numbers of the meridian with the
+corresponding longitudes are equal. There are eight choices of
+such orientations. Any two of them are related by a homeomorphism of
+the atom. 
+</P>
+
+<P>
+Triple vertices correspond  to direct products N of twice punctured 
+discs by the circle. <a name="systemN2">We introduce coordinate systems on the
+boundary tori of N</a> as follows: the meridians are the
+boundary circles of an oriented section endowed with the induced
+orientations. The longitudes are oriented fibers, and the
+intersection numbers of the meridians with the corresponding
+longitudes are equal. Any two such triples of coordinate systems
+differ by a homeomorphism of N.
+</P>
+
+<P>
+Of course, solid torus vertices correspond to solid tori. Each such
+torus V  must be labeled by an ordered pair
+(p,q) of coprime integers. These integers are the coordinates of
+the meridian of V in some coordinate system on the boundary of V. 
+An explicit  presentation of this system is not needed. We only require that 
+the matrix label (see below) for the incoming or outgoing edge must be
+written with respect to the same system.
+</P>
+
+<P>
+Exceptional atoms can correspond to  known 3-manifolds, for
+example, to hyperbolic 3-manifolds contained in known tables
+or to complements of tabulated knots. They can also correspond to 3-manifolds
+which are unknown in the sense that we only know their spines.
+</P>
+
+<P>
+Virtual vertices correspond to empty atoms. They are introduced to
+indicate the valences  of other atoms and stand for their toral
+boundary components.
+</P>
+
+<P>
+The edges of G are also of one of two types: true edges  
+with vertices of types 1--4 and virtual edges that have a virtual vertex. 
+Each true edge e is oriented and labeled by an order 2 matrix A with 
+determinant +1 or -1. We can reverse the orientation of e, but then 
+A must be replaced by its inverse. Notice that virtual edges are endowed 
+by coordinate systems. In case of the surgery presentation, these coordinate systems 
+are the canonical ones, otherwise they are constructed by the program 
+according to its internal procedure (and so do not have any particular meaning). 
+In the second case the construction of such non-canonical systems can be 
+disabled by deselecting "Options|Always Create Coordinates On Boundary Tori".
+</P>
+
+<P>
+Every labelled molecule G determines a connected
+3-manifold M(G), whose boundary consists of spheres and tori. To
+reconstruct M(G), we replace each vertex v of type 1--4 by a
+copy of the corresponding manifold. The boundary tori of this
+manifold are parameterized by the edges that have an endpoint in
+v. If e is a true edge then the corresponding tori are
+equipped with coordinate systems, and e is labeled with a
+matrix. We glue together the manifolds that correspond to the
+endpoints of e via the homeomorphism described by the matrix.
+Of course, if G is disconnected, then so is the obtained
+3-manifold M(G). In this case we replace it by the connected
+sum of all its components (since we are considering only oriented
+manifolds, the connected sum is well-defined). 
+</P>
+
+</BODY></HTML>

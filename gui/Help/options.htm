@@ -1,0 +1,71 @@
+<HTML>
+<HEAD><TITLE>3-Manifold Recognizer: options for recognition</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1251"">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR><HEADER></HEADER>
+</HEAD>
+<BODY bgColor=#f0ffff>
+
+<h1>Recognition Options</h1>
+
+<P>
+While performing recognition, there are several options to choose from. The most basic one is the 
+one called by going to "Recognizer|Recognize". The other options can be called by going to 
+"Recognizer|Recognize In Mode". The presence of these options is due to the fact that the 
+same manifold can be presented in different ways. For example, the manifold (S^2,(2,1),(3,1),(9,1),(1,-1) )
+can also be presented as the Dehn filling <a href="example-hyp.htm">Q5_43(0,1)</a>. Accordingly, 
+the program allows to carry out the recognition in the following modes:
+<UL>
+<LI> "Till First Presentation". The program works until it finds <i>some</i> presentation 
+of the manifold in question and then stops. Which of the possible presentations will be found 
+is more or less a matter of chance;
+
+<LI> "Till Main Presentation". If this option is chosen, the recognition stops only when the 
+Seifert or Waldhausen presentation is found (for closed manifolds). 
+
+<LI> "Try To Find All Presentations". The program tries to present the manifold in all ways possible.
+For example, running this command on <a href="example-spine.htm">this spine</a> yields:
+<PRE>
+Presentations	3
+
+ SL_2R	          H_1=Z_3
+	1	Seifert manifold (S^2,(2,1),(3,1),(9,1),(1,-1) )
+	2	Dehn filling Q4_2(-1,2)
+	3	Dehn filling Q5_43(0,1)
+</PRE>
+
+<LI> A separate command "Recognizer|Make Default Moves" exists so that you can try to 
+do the recognition as fast as possible: at each step only one move (determined in fixed order 
+of preference among all moves available at this point) will be performed. Application of this 
+command (when it leads to a successful recognition) yields the <a href="molecule.htm">labelled molecule</a>
+and the result of assembling.
+</UL>
+</P>
+
+
+<P>
+Further options apply to the way the recognition process is carried out. Namely, choosing 
+"Options|Disable Surgeries" will ensure that the recognition process is carried out with 
+<a href="moves.htm">surgery moves</a>. But do notice that in this case the recognition process
+may not be successful, since surgeries are in fact essential. Thus, this mode is best used when 
+your goal is to minimize a spine while keeping it special, rather than to recognize the manifold.
+</P>
+
+<P>
+If you go to "Options|Try To Simplify Spine Before Recognizing" (by default this option is disabled),
+the program first tries to minimize the spine just like it does in the previous case, and only afterwards
+applies other moves. This is especially useful when a surgery or Heegaard diagram presentation is 
+used.
+</P>
+
+
+<h1>Output Options</h1>
+
+<P>
+This refers mainly to whether you want to see the list of transformations that the spine underwent 
+during the recognition process. This can be achieved by selecting "Options|Output Move List" prior 
+to making the recognition. Also, using the command "Recognizer|Make Default Moves" will 
+also provide the list of transformations.
+</P>
+
+
+</BODY></HTML>

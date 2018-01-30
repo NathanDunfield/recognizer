@@ -10,7 +10,7 @@ in this directory::
 
   python -m pip install .
 
-and then look at the `test.py` script for some usage examples.
+and then look at the ``test.py`` script for some usage examples.
 
 .. _Spine: http://www.matlas.math.csu.ru/?page=recognizer
 .. _pywinauto: http://pywinauto.readthedocs.io/

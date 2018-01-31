@@ -35,8 +35,8 @@ class Recognizer(object):
         M = snappy.Triangulation(manifold)
         for i in range(tries):
             N = M.filled_triangulation()
+            N.simplify()
             T = snappy.snap.t3mlite.Mcomplex(N)
-            T.simplify()
             buffer = io.StringIO()
             T.save(buffer, format='spine')
             ans = self.recognize(buffer.getvalue())

@@ -56,3 +56,4 @@ end
 R = recognizer.Recognizer()
 ans1 = R.recognize(data1)
 ans2 = R.recognize(data2)
+ans3 = R.recognize_snappy('m004(1,1)')

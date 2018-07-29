@@ -9,6 +9,56 @@ import os, sys, io
 
 binary_path = os.path.join(gui.__path__[0], 'Recognizer.exe')
 
+
+def closed_isosigs(snappy_manifold, tries_per_description=20):
+    """
+    Generate a slew of 1-vertex triangulations of a closed manifold
+    using SnapPy.
+    
+    >>> M = snappy.Manifold('m004(1,2)')
+    >>> len(closed_isosigs(M, trys=5)) > 0
+    True
+    """
+    import snappy
+    M = snappy.Manifold(snappy_manifold)
+    assert M.cusp_info('complete?') == [False]
+    surgery_descriptions = [M.copy()]
+
+    try:
+        for curve in M.dual_curves():
+            N = M.drill(curve)
+            N.dehn_fill((1,0), 1)
+            surgery_descriptions.append(N.filled_triangulation([0]))
+    except snappy.SnapPeaFatalError:
+        pass
+
+    if len(surgery_descriptions) == 1:
+        # Try again, but unfill the cusp first to try to find more
+        # dual curves.
+        try:
+            filling = M.cusp_info(0).filling
+            N = M.copy()
+            N.dehn_fill((0, 0), 0)
+            N.randomize()
+            for curve in N.dual_curves():
+                D = N.drill(curve)
+                D.dehn_fill([filling, (1,0)])
+                surgery_descriptions.append(D.filled_triangulation([0]))
+        except snappy.SnapPeaFatalError:
+            pass
+
+    ans = set()
+    for N in surgery_descriptions:
+        for i in range(tries_per_description):
+            T = N.filled_triangulation()
+            if T._num_fake_cusps() == 1:
+                n = T.num_tetrahedra()
+                ans.add((n, T.triangulation_isosig(decorated=False)))
+            N.randomize()
+
+    return [iso for n, iso in sorted(ans)]
+
+
 class Recognizer(object):
     def __init__(self):
         self.app = app = pywinauto.Application(backend='win32')
@@ -32,11 +82,9 @@ class Recognizer(object):
         
     def recognize_snappy(self, manifold, tries=1):
         import snappy
-        M = snappy.Triangulation(manifold)
-        for i in range(tries):
-            N = M.filled_triangulation()
-            N.simplify()
-            T = snappy.snap.t3mlite.Mcomplex(N)
+        isosigs = closed_isosigs(manifold)
+        for iso in isosigs[:tries]:
+            T = snappy.snap.t3mlite.Mcomplex(iso)
             buffer = io.StringIO()
             T.save(buffer, format='spine')
             ans = self.recognize(buffer.getvalue())
